@@ -8,7 +8,493 @@
     <script src="scripts/bootstrap.js"></script>
 </head>
 <body>
-    <div id="error"></div>
+    <div id="meinContent" class="right" style="padding-bottom: 10px; overflow: auto; background-color: white; height: 1994px; width: 1392px;">
+
+        <h1>Updated 4:36 </h1>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td style="vertical-align:top">
+                        <style>
+                            .tableFooter {
+                                color: White;
+                                background-color: #5D7B9D;
+                                border-width: 1px;
+                                border-style: Solid;
+                            }
+
+                            .tableHeader {
+                                color: Black;
+                                background-color: #E7F0FA;
+                                border-width: 1px;
+                                border-style: Solid;
+                            }
+
+                            .bodyCell {
+                                border-width: 1px;
+                                border-style: Solid;
+                            }
+
+                            .emplName {
+                                color: White;
+                                background-color: #5D7B9D;
+                                border-width: 1px;
+                                border-style: Solid;
+                                width: 250px;
+                            }
+
+                            .emplNum {
+                                color: White;
+                                background-color: #5D7B9D;
+                                border-width: 1px;
+                                border-style: Solid;
+                                width: 50px;
+                            }
+                        </style>
+                        <div id="polagaemiTable" style="margin-right:40px; width:356px;">
+                            <table cellspacing="0" cellpadding="1" style="border-width:2px;border-style:Solid;font-family:Verdana;font-size:9pt;border-collapse:collapse;">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" class="emplNum">00017     </td>
+                                        <td align="center" class="emplName" colspan="3">Светлана Димитрова Николова</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="tableHeader">Година</td>
+                                        <td align="center" class="tableHeader">Дни в началото <br> на 2020 г. </td>
+                                        <td align="center" class="tableHeader">Използван отпуск</td>
+                                        <td align="center" class="tableHeader">Остатък</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="bodyCell" style="width:90px;">преди 2017 г. </td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="bodyCell" style="width:90px;">2017</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="bodyCell" style="width:90px;">2018</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="bodyCell" style="width:90px;">2019</td>
+                                        <td align="right" class="bodyCell">27</td>
+                                        <td align="right" class="bodyCell">9</td>
+                                        <td align="right" class="bodyCell">18</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="bodyCell" style="width:90px;">2020</td>
+                                        <td align="right" class="bodyCell">50</td>
+                                        <td align="right" class="bodyCell">0</td>
+                                        <td align="right" class="bodyCell">50</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="tableFooter">Всичко</td>
+                                        <td align="right" class="tableFooter">77</td>
+                                        <td align="right" class="tableFooter">9</td>
+                                        <td align="right" class="tableFooter">68</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="vertical-align:top">
+                        <style>
+                            .tableHeaderOnly {
+                                border-width: 2px;
+                                border-style: Solid;
+                                border-bottom: none;
+                            }
+
+                            .tableHeaderIzpolzvani {
+                                width: 300px;
+                                font-family: Verdana;
+                                font-size: 12px;
+                                font-weight: normal;
+                                background-color: #5D7B9D;
+                                color: white;
+                                text-align: center;
+                                height: 25px;
+                                width: 475px;
+                            }
+
+                            .tableHeaderOstanali {
+                                font-family: Verdana;
+                                font-size: 12px;
+                                font-weight: normal;
+                                border: 1px solid white;
+                                background-color: #5D7B9D;
+                                color: white;
+                                text-align: center;
+                            }
+
+                            .tableBodyOnly {
+                                border-width: 2px;
+                                border-style: Solid;
+                                border-top: hidden;
+                            }
+
+                            .tableBodyCell {
+                                font-family: Verdana;
+                                font-size: 12px;
+                                color: black;
+                                font-weight: normal;
+                                text-align: center;
+                                border: 1px solid black;
+                                background-color: rgb(193,255,193);
+                            }
+                        </style>
+                        <table id="planiraniTable">
+                            <thead class="tableHeaderOnly" style="width:405px; display:block;" cellpadding="0" cellspacing="0">
+                                <tr style="display:block;">
+                                    <th class="tableHeaderIzpolzvani" colspan="4">Използван отпуск</th>
+                                </tr>
+                                <tr style="display:block;">
+                                    <th class="tableHeaderOstanali" style="width:75px; border-left:none;">от</th>
+                                    <th class="tableHeaderOstanali" style="width:75px;">до</th>
+                                    <th class="tableHeaderOstanali" style="width:55px;">Работни дни</th>
+                                    <th class="tableHeaderOstanali" style="width:198px; border-right:none;">Вид отпуск</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tableBodyOnly" style="display: block; overflow: hidden scroll; height: 106px; width: 405px;" cellpadding="0" cellspacing="0">
+                            <tbody class="tableBodyOnly" style="display: block; overflow-x:hidden; overflow-y:scroll; height: 106px; width: 405px;" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;border-top:none !important;">01.04.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;border-top:none !important;">31.12.2021</th>
+                                    <th class="tableBodyCell" style="width:60px;border-top:none !important;">448</th>
+                                    <th class="tableBodyCell" style="width:190px;border-top:none !important;">Неплатено майчинство</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.07.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">31.12.2021</th>
+                                    <th class="tableBodyCell" style="width:60px;">383</th>
+                                    <th class="tableBodyCell" style="width:190px;">Прекъсване на отпуск</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">20.07.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">30.07.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">9</th>
+                                    <th class="tableBodyCell" style="width:190px;">Платен годишен отпуск по чл.155</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.07.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">09.07.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">1</th>
+                                    <th class="tableBodyCell" style="width:190px;">test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.08.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">09.08.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">1</th>
+                                    <th class="tableBodyCell" style="width:190px;">test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.09.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">09.09.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">1</th>
+                                    <th class="tableBodyCell" style="width:190px;">test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.06.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">09.06.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">1</th>
+                                    <th class="tableBodyCell" style="width:190px;">test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tableBodyCell" style="width:75px;border-left:none !important;">08.05.2020</th>
+                                    <th class="tableBodyCell" style="width:75px;">09.05.2020</th>
+                                    <th class="tableBodyCell" style="width:60px;">1</th>
+                                    <th class="tableBodyCell" style="width:190px;">test</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            //(function () {
+                            //    var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+                            //    var isEmpty = document.getElementById("planiraniEmptyCell");
+                            //    if (isEmpty || !isOverflow(planiraniBodyTable, 6)) {
+                            //        document.getElementsByClassName("tableBodyOnly")[0].style.height = "";
+                            //        document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                            //        document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                            //        document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                            //    } else {
+                            //        var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
+                            //        var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
+                            //        var mainTable = document.getElementById("myOrdersTable");
+                            //        if (mainTable.style.visibility == "hidden") {
+                            //            planiraniBodyTable.style.height = "";
+                            //            document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                            //            document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                            //            document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                            //        } else {
+                            //            planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
+                            //        }
+                            //    }
+                            //}())
+
+                            function isOverflow(el, maxDiff) {
+                                var curOverf = el.style.overflow;
+                                if (!curOverf || curOverf === "visible")
+                                    el.style.overflow = "hidden";
+                                var isOverflowing = el.clientWidth < el.scrollWidth
+                                    || (el.clientHeight < el.scrollHeight && el.scrollHeight - el.clientHeight > maxDiff);
+                                el.style.overflow = curOverf;
+                                return isOverflowing;
+                            }
+                        </script>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="myOrdersTable" style="visibility:visible">
+            <div id="gridContainer" onchange="AESSMyVacationOrders._checkforVisibility">
+                <input type="hidden" name="OtpOrderGrid" id="OtpOrderGrid_State" value="{&amp;quot;focusedRow&amp;quot;:0,&amp;quot;selection&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;callbackState&amp;quot;:&amp;quot;lFzv9lwDaW6QSqWq8RCkT8HOFAnh51MlIXOYbWWq9xwdMNYk189BzQKeGuyGvzTH+iCR+ogaM1GDqjIHgWAoaxFT9JY+9YEqf5NCD7ibrDilI5iS787wNUJNsO3p27lWvvWcWYwg282qmm82UFWncm2hY7Wn1y6HaN0dvAAArnLwxYWuwNs1pttqCd6/5dmwE40POp9RNStRAEV5GsMoskN/yOcEW/FczcAEB0E1Yrbp5656W1SciwzNn8cqEEGggR22mLD7f5tonKey02culWrZvRr/mkhmCPyfj1iK48Vofm8uMF1bX2A2UXhVC4ySGX2JrK97R4HkQ6O7ZzSOycY1nYXWz8p+Ec6vt8k6TbdwP3Fyt9+faJ6RDW1kNit6w05GSn7fNbC2mpWI21iSUWFPXVsO2L6/RLpLiA1McFxLtOh1g4Q5sN6OgL4oXR708Aa2fsD37akzT8wt6mpjpQqMPybE0upE/59KVymEWvo=&amp;quot;,&amp;quot;groupLevelState&amp;quot;:{},&amp;quot;keys&amp;quot;:[&amp;quot;180524&amp;quot;,&amp;quot;180523&amp;quot;,&amp;quot;180522&amp;quot;,&amp;quot;180467&amp;quot;,&amp;quot;180464&amp;quot;,&amp;quot;180446&amp;quot;],&amp;quot;scrollState&amp;quot;:null,&amp;quot;toolbar&amp;quot;:null}"><table class="dxgvControl_Office2010Blue dxgv" id="OtpOrderGrid" style="width: 798px; border-collapse: separate;" tabindex="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="dxgvHSDC" style="padding-right: 0px;">
+                                    <div style="overflow: hidden; width: 798px;">
+                                        <table id="OtpOrderGrid_DXHeaderTable" class="dxgvTable_Office2010Blue" oncontextmenu="return ASPx.GVContextMenu('OtpOrderGrid',event);" style="width:100%;empty-cells:show;table-layout:fixed;overflow:hidden;">
+                                            <tbody>
+                                                <tr class="dxgvArm">
+                                                    <td style="width:40px;"></td>
+                                                    <td style="width:40px;"></td>
+                                                    <td style="width:84px;"></td>
+                                                    <td style="width:84px;"></td>
+                                                    <td style="width:85px;"></td>
+                                                    <td style="width:250px;"></td>
+                                                    <td style="width:200px;"></td>
+                                                </tr>
+                                                <tr id="OtpOrderGrid_DXHeadersRow0">
+                                                    <td id="OtpOrderGrid_col0" class="dxgvHeader_Office2010Blue" style="border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col1" class="dxgvHeader_Office2010Blue" style="border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col2" class="dxgvHeader_Office2010Blue" style="text-align:Center;border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:Center;">От</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col3" class="dxgvHeader_Office2010Blue" style="text-align:Center;border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:Center;">До</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col4" class="dxgvHeader_Office2010Blue" style="border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Работни дни</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col5" class="dxgvHeader_Office2010Blue" style="text-align:Center;border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:Center;">Вид отпуск</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td id="OtpOrderGrid_col6" class="dxgvHeader_Office2010Blue" style="text-align:Center;border-top-width:0px;border-left-width:0px;">
+                                                        <table style="width:100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:Center;">Забележка</td>
+                                                                    <td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div><div class="dxgvCSD" style="height: 200px; overflow: hidden auto; width: 798px;">
+                                    <table id="OtpOrderGrid_DXMainTable" class="dxgvTable_Office2010Blue dxgvRBB" oncontextmenu="return ASPx.GVContextMenu('OtpOrderGrid',event);" style="width:100%;empty-cells:show;table-layout:fixed;overflow:hidden;">
+                                        <tbody>
+                                            <tr class="dxgvArm">
+                                                <td style="width:40px;"></td>
+                                                <td style="width:40px;"></td>
+                                                <td style="width:84px;"></td>
+                                                <td style="width:84px;"></td>
+                                                <td style="width:85px;"></td>
+                                                <td style="width:250px;"></td>
+                                                <td style="width:200px;"></td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow0" title="Създадена на: 23.09.2020г.  в 11:07" class="dxgvDataRow_Office2010Blue dxgvFocusedRow_Office2010Blue" style="">
+                                                <td id="OtpOrderGrid_tccell0_0" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img title="Заявката не е изпратена за обработка" class="dxeImage dxeDisabled" id="OtpOrderGrid_StatusImg_0" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_0', event)" src="/Library/Pending.png" alt=""></td>
+                                                <td id="OtpOrderGrid_tccell0_1" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage dxeDisabled" id="OtpOrderGrid_POrder_0" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_0', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">28.09.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">28.09.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">1</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Неплатен отп. работод.</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow1" title="Създадена на: 23.09.2020г.  в 11:06" class="dxgvDataRow_Office2010Blue" style="">
+                                                <td id="OtpOrderGrid_tccell1_0" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img title="Заявката не е изпратена за обработка" class="dxeImage dxeDisabled" id="OtpOrderGrid_StatusImg_1" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_1', event)" src="/Library/Pending.png" alt=""></td>
+                                                <td id="OtpOrderGrid_tccell1_1" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage dxeDisabled" id="OtpOrderGrid_POrder_1" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_1', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">25.09.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">25.09.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">1</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Неплатен отп. работод.</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow2" title="Създадена на: 23.09.2020г.  в 11:06" class="dxgvDataRow_Office2010Blue" style="">
+                                                <td id="OtpOrderGrid_tccell2_0" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img title="Заявката не е изпратена за обработка" class="dxeImage dxeDisabled" id="OtpOrderGrid_StatusImg_2" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_2', event)" src="/Library/Pending.png" alt=""></td>
+                                                <td id="OtpOrderGrid_tccell2_1" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage dxeDisabled" id="OtpOrderGrid_POrder_2" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_2', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">24.09.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">24.09.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">1</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Неплатен отп. работод.</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow3" title="Създадена на: 22.07.2020г.  в 13:42" class="dxgvDataRow_Office2010Blue" style="">
+                                                <td id="OtpOrderGrid_tccell3_0" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img title="Заявката не е изпратена за обработка" class="dxeImage dxeDisabled" id="OtpOrderGrid_StatusImg_3" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_3', event)" src="/Library/Pending.png" alt=""></td>
+                                                <td id="OtpOrderGrid_tccell3_1" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage dxeDisabled" id="OtpOrderGrid_POrder_3" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_3', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">03.08.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">14.08.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">10</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Платен годишен отпуск по чл.155</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow4" title="Изпратена на: 27.04.2020г.  в 15:45" class="dxgvDataRow_Office2010Blue" style="">
+                                                <td id="OtpOrderGrid_tccell4_0" class="dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">
+                                                    <img title="Успешен импорт в Aladin" class="dxeImage" id="OtpOrderGrid_StatusImg_4" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_4', event)" src="/Library/Imported.png" alt="">
+                                                    </script>
+                                                </td>
+                                                <td id="OtpOrderGrid_tccell4_1" class="dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage" id="OtpOrderGrid_POrder_4" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_4', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">27.04.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">05.05.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">6</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Платен годишен отпуск по чл.155</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                            <tr id="OtpOrderGrid_DXDataRow5" title="Изпратена на: 31.01.2020г.  в 10:56" class="dxgvDataRow_Office2010Blue dxgvLVR" style="">
+                                                <td id="OtpOrderGrid_tccell5_0" class="dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img title="не е одобрена" class="dxeImage" id="OtpOrderGrid_StatusImg_5" onclick="return ASPx.SEClick('OtpOrderGrid_StatusImg_5', event)" src="/Library/Rejected.png" alt=""></td>
+                                                <td id="OtpOrderGrid_tccell5_1" class="aspNetDisabled dxgv dx-ac" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;"><img class="dxeImage dxeDisabled" id="OtpOrderGrid_POrder_5" onclick="return ASPx.SEClick('OtpOrderGrid_POrder_5', event)" src="/Library/PrintIcon.png" alt=""></td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">31.01.2020</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">05.02.2020</td>
+                                                <td class="dx-wrap dxgv dx-ar" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">4</td>
+                                                <td class="dxgv dx-al" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">Платен годишен отпуск по чл.155</td>
+                                                <td class="dxgv" style="padding-left:1px;padding-right:1px;padding-top:1px;padding-bottom:1px;">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><div class="dxgvFSDC" style="padding-right: 0px;">
+                                    <div style="overflow: hidden; width: 798px;">
+                                        <table id="OtpOrderGrid_DXFooterTable" class="dxgvTable_Office2010Blue" oncontextmenu="return ASPx.GVContextMenu('OtpOrderGrid',event);" style="width:100%;empty-cells:show;table-layout:fixed;overflow:hidden;">
+                                            <tbody>
+                                                <tr class="dxgvArm">
+                                                    <td style="width:40px;"></td>
+                                                    <td style="width:40px;"></td>
+                                                    <td style="width:84px;"></td>
+                                                    <td style="width:84px;"></td>
+                                                    <td style="width:85px;"></td>
+                                                    <td style="width:250px;"></td>
+                                                    <td style="width:200px;"></td>
+                                                </tr>
+                                                <tr id="OtpOrderGrid_DXFooterRow" class="dxgvFooter_Office2010Blue" style="color:White;background-color:#5D7B9D;font-size:10pt;">
+                                                    <td id="OtpOrderGrid_tcFooterRow" class="dxgv" colspan="7">Вие разполагате с 58 дни за ползване през годината.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div><img id="OtpOrderGrid_IADD" class="dxGridView_gvDragAndDropArrowDown_Office2010Blue" src="/DXR.axd?r=1_89-f7Srl" alt="Down Arrow" style="position:absolute;visibility:hidden;top:-100px;"><img id="OtpOrderGrid_IADU" class="dxGridView_gvDragAndDropArrowUp_Office2010Blue" src="/DXR.axd?r=1_89-f7Srl" alt="Up Arrow" style="position:absolute;visibility:hidden;top:-100px;"><img id="OtpOrderGrid_IADL" class="dxGridView_gvDragAndDropArrowLeft_Office2010Blue" src="/DXR.axd?r=1_89-f7Srl" alt="Left Arrow" style="position:absolute;visibility:hidden;top:-100px;"><img id="OtpOrderGrid_IADR" class="dxGridView_gvDragAndDropArrowRight_Office2010Blue" src="/DXR.axd?r=1_89-f7Srl" alt="Right Arrow" style="position:absolute;visibility:hidden;top:-100px;"><img id="OtpOrderGrid_IDHF" class="dxGridView_gvDragAndDropHideColumn_Office2010Blue" src="/DXR.axd?r=1_89-f7Srl" alt="Hide" style="position:absolute;visibility:hidden;top:-100px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table cellspacing="2" style="width: 800px; padding: 0; margin-top:5px;">
+                <tbody>
+                    <tr>
+                        <td style="width: 85px; padding-left:2px;">
+                            <div class="dxbButton_Office2010Blue dxbButtonSys dxbTSys" id="NewReccord" style="width:85px;-webkit-user-select:none;">
+                                <div class="dxb" id="NewReccord_CD">
+                                    <div class="dxb-hbc">
+                                        <input id="NewReccord_I" class="dxb-hb" value="Добави" type="button" name="NewReccord">
+                                    </div><span class="dx-vam">Добави</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 420px">
+                            &nbsp;
+                        </td>
+                        <td style="padding-right:2px;">
+                            <div class="dxbButton_Office2010Blue dxbButtonSys dxbTSys" id="EditRecord" style="width:85px;-webkit-user-select:none;">
+                                <div class="dxb" id="EditRecord_CD">
+                                    <div class="dxb-hbc">
+                                        <input id="EditRecord_I" class="dxb-hb" value="Промяна" type="button" name="EditRecord">
+                                    </div><span class="dx-vam">Промяна</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding-right:2px;">
+                            <div class="dxbButton_Office2010Blue dxbButtonSys dxbTSys" id="SendRecord" style="width:85px;-webkit-user-select:none;">
+                                <div class="dxb" id="SendRecord_CD">
+                                    <div class="dxb-hbc">
+                                        <input id="SendRecord_I" class="dxb-hb" value="Изпрати" type="button" name="SendRecord">
+                                    </div><span class="dx-vam">Изпрати</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dxbButton_Office2010Blue dxbButtonSys dxbTSys" id="DeleteRecord" style="-webkit-user-select:none;">
+                                <div class="dxb" id="DeleteRecord_CD">
+                                    <div class="dxb-hbc">
+                                        <input id="DeleteRecord_I" class="dxb-hb" value="Изтрий" type="button" name="DeleteRecord">
+                                    </div><span class="dx-vam">Изтрий</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="pdf"></div>
+    </div>
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!--<div id="error"></div>
     <h1>Updated 4:13 </h1>
 
     <style>
@@ -139,28 +625,27 @@
 
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
 
-                //if (!isIOS()) {
-                //    planiraniBodyTable.style.overflowY = "";
-                //    planiraniBodyTable.style.overflowX = "";
-                //    planiraniBodyTable.style.overflow = "scroll";
-                //    planiraniBodyTable.style.webkitOverflowScrolling = "touch";
-                //}
+                    //if (!isIOS()) {
+                    //    planiraniBodyTable.style.overflowY = "";
+                    //    planiraniBodyTable.style.overflowX = "";
+                    //    planiraniBodyTable.style.overflow = "scroll";
+                    //    planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+                    //}
 
-                    //document.addEventListener('DOMContentLoaded', function (event) {
-                    //   var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-                    //    document.getElementById("error").innerHTML += isIOS();
+                        //document.addEventListener('DOMContentLoaded', function (event) {
+                        //   var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+                        //    document.getElementById("error").innerHTML += isIOS();
 
-                    //    if (isIOS()) {
-                    //        planiraniBodyTable.style.overflowY = "";
-                    //        planiraniBodyTable.style.overflowX = "";
-                    //        planiraniBodyTable.style.overflow = "scroll";
-                    //        planiraniBodyTable.style.webkitOverflowScrolling = "touch";
-                    //    }
-                    //}, true);
+                        //    if (isIOS()) {
+                        //        planiraniBodyTable.style.overflowY = "";
+                        //        planiraniBodyTable.style.overflowX = "";
+                        //        planiraniBodyTable.style.overflow = "scroll";
+                        //        planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+                        //    }
+                        //}, true);
 
-    </script>
-
-
+    </script>-->
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!--<header>
         <div class="navbar navbar-default navbar-fixed-top text-uppercase">
             <div class="container">
@@ -227,3 +712,9 @@
 
 </body>
 </html>
+
+
+
+
+
+
