@@ -10,7 +10,7 @@
 <body>
     <div id="meinContent" class="right" style="padding-bottom: 10px; overflow: auto; background-color: white; height: 1994px; width: 1392px;">
 
-        <h1>Updated 4:36 </h1>
+        <h1>Updated 4:38 </h1>
 
         <table>
             <tbody>
@@ -216,28 +216,28 @@
                             </tbody>
                         </table>
                         <script>
-                            //(function () {
-                            //    var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-                            //    var isEmpty = document.getElementById("planiraniEmptyCell");
-                            //    if (isEmpty || !isOverflow(planiraniBodyTable, 6)) {
-                            //        document.getElementsByClassName("tableBodyOnly")[0].style.height = "";
-                            //        document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
-                            //        document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
-                            //        document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                            //    } else {
-                            //        var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
-                            //        var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
-                            //        var mainTable = document.getElementById("myOrdersTable");
-                            //        if (mainTable.style.visibility == "hidden") {
-                            //            planiraniBodyTable.style.height = "";
-                            //            document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
-                            //            document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
-                            //            document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                            //        } else {
-                            //            planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
-                            //        }
-                            //    }
-                            //}())
+                            (function () {
+                                var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+                                var isEmpty = document.getElementById("planiraniEmptyCell");
+                                if (isEmpty || !isOverflow(planiraniBodyTable, 6)) {
+                                    document.getElementsByClassName("tableBodyOnly")[0].style.height = "";
+                                    document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                                    document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                                    document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                                } else {
+                                    var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
+                                    var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
+                                    var mainTable = document.getElementById("myOrdersTable");
+                                    if (mainTable.style.visibility == "hidden") {
+                                        planiraniBodyTable.style.height = "";
+                                        document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                                        document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                                        document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                                    } else {
+                                        planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
+                                    }
+                                }
+                            }())
 
                             function isOverflow(el, maxDiff) {
                                 var curOverf = el.style.overflow;
