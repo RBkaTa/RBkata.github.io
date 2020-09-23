@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 6:16 </h1>
+    <h1>Updated 6:19 </h1>
     <table>
         <tbody>
             <tr>
@@ -313,13 +313,13 @@
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
         var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (isIOS) {
-            //planiraniBodyTable.classList.add("iosTable");
+            planiraniBodyTable.classList.add("iosTable");
 
-            planiraniBodyTable.style.display = "block";
-            planiraniBodyTable.style.overflow = 'scroll';
-            planiraniBodyTable.style.WebkitOverflowScrolling = 'touch';
-            planiraniBodyTable.style.height = "106px";
-            planiraniBodyTable.style.width = "405px";
+            //planiraniBodyTable.style.display = "block";
+            //planiraniBodyTable.style.overflow = 'scroll';
+            //planiraniBodyTable.style.WebkitOverflowScrolling = 'touch';
+            //planiraniBodyTable.style.height = "106px";
+            //planiraniBodyTable.style.width = "405px";
 
             //.iosTable {
             //    display: block;
@@ -329,12 +329,12 @@
             //    width: 405px;
             //}
         } else {
-            //planiraniBodyTable.classList.add("windowsTable");
-            planiraniBodyTable.style.display = "block";
-            planiraniBodyTable.style.overflowX = "hidden";
-            planiraniBodyTable.style.overflowY = "auto";
-            planiraniBodyTable.style.height = "106px";
-            planiraniBodyTable.style.width = "405px";
+            planiraniBodyTable.classList.add("windowsTable");
+            //planiraniBodyTable.style.display = "block";
+            //planiraniBodyTable.style.overflowX = "hidden";
+            //planiraniBodyTable.style.overflowY = "auto";
+            //planiraniBodyTable.style.height = "106px";
+            //planiraniBodyTable.style.width = "405px";
 
             //       .windowsTable {
             //    display: block;
