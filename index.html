@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 6:26 </h1>
+    <h1>Updated 6:28 </h1>
     <table>
         <tbody>
             <tr>
@@ -184,7 +184,7 @@
                                 <th class="tableHeaderOstanali" style="width:198px; border-right:none;">Вид отпуск</th>
                             </tr>
                         </thead>
-                        <tbody class="tableBodyOnly" style="display: block;overflow-x: hidden;overflow-y: auto;height: 106px;width: 405px;" cellpadding="0" cellspacing="0">
+                        <tbody class="tableBodyOnly" cellpadding="0" cellspacing="0">
                             <tr>
                                 <th class="tableBodyCell" style="width:75px;border-left:none !important;border-top:none !important;">24.08.2020</th>
                                 <th class="tableBodyCell" style="width:75px;border-top:none !important;">24.08.2020</th>
@@ -250,12 +250,13 @@
                             }
 
                             //var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                            //if (isIOS) {
-                            //    planiraniBodyTable.classList.add("iosTable");
+                            var isIOS = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+                            if (isIOS) {
+                                planiraniBodyTable.classList.add("iosTable");
 
-                            //} else {
-                            //    planiraniBodyTable.classList.add("windowsTable");
-                            //}
+                            } else {
+                                planiraniBodyTable.classList.add("windowsTable");
+                            }
                         }())
 
                         function isOverflow(el, maxDiff) {
