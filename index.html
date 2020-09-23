@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 6:19 </h1>
+    <h1>Updated 6:22 </h1>
     <table>
         <tbody>
             <tr>
@@ -237,32 +237,40 @@
                     </table>
 
                     <script>
-                        //(function () {
-                        //    var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-                        //    var isEmpty = document.getElementById("planiraniEmptyCell");
+                        (function () {
+                            var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+                            var isEmpty = document.getElementById("planiraniEmptyCell");
 
-                        //    if (isEmpty || !isOverflow(planiraniBodyTable, 6)) {
-                        //        document.getElementsByClassName("tableBodyOnly")[0].style.height = "";
+                            if (isEmpty || !isOverflow(planiraniBodyTable, 6)) {
+                                document.getElementsByClassName("tableBodyOnly")[0].style.height = "";
 
-                        //        document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
-                        //        document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
-                        //        document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                        //    } else {
-                        //        var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
-                        //        var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
+                                document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                                document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                                document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                            } else {
+                                var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
+                                var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
 
-                        //        var mainTable = document.getElementById("myOrdersTable");
-                        //        if (mainTable.style.visibility == "hidden") {
-                        //            planiraniBodyTable.style.height = "";
+                                var mainTable = document.getElementById("myOrdersTable");
+                                if (mainTable.style.visibility == "hidden") {
+                                    planiraniBodyTable.style.height = "";
 
-                        //            document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
-                        //            document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
-                        //            document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                        //        } else {
-                        //            planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
-                        //        }
-                        //    }
-                        //}())
+                                    document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
+                                    document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
+                                    document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
+                                } else {
+                                    planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
+                                }
+                            }
+
+                            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                            if (isIOS) {
+                                planiraniBodyTable.classList.add("iosTable");
+
+                            } else {
+                                planiraniBodyTable.classList.add("windowsTable");
+                            }
+                        }())
 
                         function isOverflow(el, maxDiff) {
                             var curOverf = el.style.overflow;
@@ -283,10 +291,7 @@
         </tbody>
     </table>
 
-    <hr />
-    <button style="border: 1px solid red" onclick="onClick()">Click</button>
-
-    <script>
+    <!--<script>
         function onClick() {
             //document.getElementById("info-div").innerHTML = isIOS();
             //document.getElementById("info-div-2").innerHTML = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
@@ -345,9 +350,7 @@
             //}
         }
 
-    </script>
-
-
+    </script>-->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!--<div id="error"></div>
     <h1>Updated 4:13 </h1>
