@@ -8,7 +8,7 @@
     <script src="scripts/bootstrap.js"></script>
 </head>
 <body>
-    <h1>Updated 4:50 </h1>
+    <h1>Updated 4:53 </h1>
     <table>
         <tbody>
             <tr>
@@ -279,13 +279,13 @@
         }
 
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-        alert(isIOS());
-        //if (!isIOS()) {
-        //    planiraniBodyTable.style.overflowY = "";
-        //    planiraniBodyTable.style.overflowX = "";
-        //    planiraniBodyTable.style.overflow = "scroll";
-        //    planiraniBodyTable.style.webkitOverflowScrolling = "touch";
-        //}
+        
+        if (!isIOS()) {
+            planiraniBodyTable.style.overflowY = "";
+            planiraniBodyTable.style.overflowX = "";
+            planiraniBodyTable.style.overflow = "scroll";
+            planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+        }
     </script>
 
 
