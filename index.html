@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 6:28 </h1>
+    <h1>Updated 6:31 </h1>
     <table>
         <tbody>
             <tr>
@@ -249,8 +249,8 @@
                                 document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
                             }
 
-                            //var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                            var isIOS = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+                            //var isIOS = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+                            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                             if (isIOS) {
                                 planiraniBodyTable.classList.add("iosTable");
 
