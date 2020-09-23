@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 5:58 </h1>
+    <h1>Updated 6:16 </h1>
     <table>
         <tbody>
             <tr>
@@ -292,12 +292,12 @@
             //document.getElementById("info-div-2").innerHTML = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
             //document.getElementById("info-div-3").innerHTML = navigator.platform;
 
-            $('#info-div').html(isIOS());
+            $('#info-div').html(IOS());
             $('#info-div-2').html((navigator.userAgent.includes("Mac") && "ontouchend" in document));
             $('#info-div-3').html(navigator.platform);
         };
 
-        function isIOS() {
+        function IOS() {
             return [
                 'iPad Simulator',
                 'iPhone Simulator',
@@ -311,7 +311,8 @@
         }
 
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-        if (isIOS()) {
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
             //planiraniBodyTable.classList.add("iosTable");
 
             planiraniBodyTable.style.display = "block";
