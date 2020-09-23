@@ -8,7 +8,8 @@
     <script src="scripts/bootstrap.js"></script>
 </head>
 <body>
-    <h1>Updated 3:26 </h1>
+    <div id="error"></div>
+    <h1>Updated 3:28 </h1>
 
     <table>
         <tbody>
@@ -527,10 +528,13 @@
 
         (function () {
             var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-            
+            document.getElementById("error").innerHTML += isIOS();
+
             if (isIOS()) {
-                planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+                planiraniBodyTable.style.overflowY = "";
+                planiraniBodyTable.style.overflowX = "";
                 planiraniBodyTable.style.overflow = "scroll";
+                planiraniBodyTable.style.webkitOverflowScrolling = "touch";
             }
         }())
     </script>
