@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 5:52 </h1>
+    <h1>Updated 5:58 </h1>
     <table>
         <tbody>
             <tr>
@@ -288,9 +288,13 @@
 
     <script>
         function onClick() {
-            document.getElementById("info-div").innerHTML = isIOS();
-            document.getElementById("info-div-2").innerHTML = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-            document.getElementById("info-div-3").innerHTML = navigator.platform;
+            //document.getElementById("info-div").innerHTML = isIOS();
+            //document.getElementById("info-div-2").innerHTML = (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+            //document.getElementById("info-div-3").innerHTML = navigator.platform;
+
+            $('#info-div').html(isIOS());
+            $('#info-div-2').html((navigator.userAgent.includes("Mac") && "ontouchend" in document));
+            $('#info-div-3').html(navigator.platform);
         };
 
         function isIOS() {
