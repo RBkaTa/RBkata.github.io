@@ -28,7 +28,7 @@
     <div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
-    <h1>Updated 6:22 </h1>
+    <h1>Updated 6:24 </h1>
     <table>
         <tbody>
             <tr>
@@ -247,20 +247,6 @@
                                 document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
                                 document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
                                 document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                            } else {
-                                var polagaemiHeigh = document.getElementById("polagaemiTable").scrollHeight;
-                                var planiraniHeigh = document.getElementById("planiraniTable").scrollHeight;
-
-                                var mainTable = document.getElementById("myOrdersTable");
-                                if (mainTable.style.visibility == "hidden") {
-                                    planiraniBodyTable.style.height = "";
-
-                                    document.getElementsByClassName("tableHeaderOstanali")[0].style.width = "78px";
-                                    document.getElementsByClassName("tableHeaderOstanali")[1].style.width = "78px";
-                                    document.getElementsByClassName("tableHeaderOstanali")[2].style.width = "60px";
-                                } else {
-                                    planiraniBodyTable.style.height = planiraniBodyTable.clientHeight + (polagaemiHeigh - planiraniHeigh) + "px";
-                                }
                             }
 
                             var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
