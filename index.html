@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="error"></div>
-    <h1>Updated 3:31 </h1>
+    <h1>Updated 3:35 </h1>
 
     <table>
         <tbody>
@@ -526,17 +526,27 @@
                 || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
         }
 
-        document.addEventListener('DOMContentLoaded', function (event) {
-           var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
-            document.getElementById("error").innerHTML += isIOS();
+        var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+        document.getElementById("error").innerHTML += isIOS();
 
-            if (isIOS()) {
-                planiraniBodyTable.style.overflowY = "";
-                planiraniBodyTable.style.overflowX = "";
-                planiraniBodyTable.style.overflow = "scroll";
-                planiraniBodyTable.style.webkitOverflowScrolling = "touch";
-            }
-        });
+        if (isIOS()) {
+            planiraniBodyTable.style.overflowY = "";
+            planiraniBodyTable.style.overflowX = "";
+            planiraniBodyTable.style.overflow = "scroll";
+            planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+        }
+
+            //document.addEventListener('DOMContentLoaded', function (event) {
+            //   var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
+            //    document.getElementById("error").innerHTML += isIOS();
+
+            //    if (isIOS()) {
+            //        planiraniBodyTable.style.overflowY = "";
+            //        planiraniBodyTable.style.overflowX = "";
+            //        planiraniBodyTable.style.overflow = "scroll";
+            //        planiraniBodyTable.style.webkitOverflowScrolling = "touch";
+            //    }
+            //}, true);
 
     </script>
 
