@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="error"></div>
-    <h1>Updated 3:35 </h1>
+    <h1>Updated 3:38 </h1>
 
     <table>
         <tbody>
@@ -528,6 +528,10 @@
 
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
         document.getElementById("error").innerHTML += isIOS();
+        document.getElementById("error").innerHTML += " ";
+        document.getElementById("error").innerHTML += (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+        document.getElementById("error").innerHTML += " ";
+        document.getElementById("error").innerHTML += navigator.platform;
 
         if (isIOS()) {
             planiraniBodyTable.style.overflowY = "";
