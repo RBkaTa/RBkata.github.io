@@ -8,7 +8,7 @@
     <script src="scripts/bootstrap.js"></script>
 </head>
 <body>
-    <h1>Updated 4:53 </h1>
+    <h1>Updated 4:55 </h1>
     <table>
         <tbody>
             <tr>
@@ -280,7 +280,7 @@
 
         var planiraniBodyTable = document.getElementsByClassName("tableBodyOnly")[0];
         
-        if (!isIOS()) {
+        if (isIOS()) {
             planiraniBodyTable.style.overflowY = "";
             planiraniBodyTable.style.overflowX = "";
             planiraniBodyTable.style.overflow = "scroll";
