@@ -111,12 +111,29 @@
         </nav>
     </header>
 
-    <div class="btn-warning popup" onclick="onWarningClick()" style="position: fixed;width: 150px;height: 150px;border: 1px solid black;border-radius: 84px; text-align:center;padding-top:50px;">
+    <!--<div class="btn-warning popup" onclick="onWarningClick()" style="position: fixed;width: 150px;height: 150px;border: 1px solid black;border-radius: 84px; text-align:center;padding-top:50px;">
         <span style="font-size:x-large;">ВАЖНО !!!</span>
         <span class="popuptext" id="myPopup"><img src="Images/warning.png" style="margin-top: 5px; margin-left: 6px; margin-bottom: 9px; margin-right:6px;" width="800" height="830"></span>
+    </div>-->
+    <div class="btn-warning popup" onclick="showFunImg()" style="position: fixed;width: 150px;height: 150px;border: 1px solid black;border-radius: 84px; text-align:center;padding-top:50px;">
+        <span style="font-size:x-large;">ВАЖНО !!!</span>
     </div>
 
-    <div class="container">
+    <div id="myPopup" style="display: none;position: relative;height: 100%;width: 100%;">
+        <img src="Images/warning.png"  onclick="hideFunImg()" style="margin-top: 5px;
+                                                              margin-left: 6px;
+                                                              margin-bottom: 9px;
+                                                              margin-right: 6px;
+                                                              position: absolute;
+                                                              top: 0;
+                                                              left: 0;
+                                                              right: 0;
+                                                              bottom: 0;
+                                                              z-index:1;
+                                                              margin: auto;" width="800" height="830">
+    </div>
+
+    <div id="main-container" class="container">
         <main role="main" class="pb-3">
 
             <style>
@@ -304,13 +321,28 @@
                 };
 
 
+                function showFunImg() {
+                    var popup = document.getElementById("myPopup");
+
+                    popup.style.display = "contents";
+
+                    $('body>*:not(#myPopup)').css("filter", "blur(3px)");
+                };
+
+                function hideFunImg() {
+                    var popup = document.getElementById("myPopup");
+
+                    popup.style.display = "none";
+
+                    $('body>*:not(#myPopup)').css("filter", "blur(0)");
+                };
+
                 function onWarningClick() {
                     var popup = document.getElementById("myPopup");
                     popup.classList.toggle("show");
-                }
+                };
 
                 function onProductForCalcSelected(s) {
-                    debugger;
                     var selection = s.value;
 
                     var fullProductInfo = products.filter(function (value, index, arr) {
