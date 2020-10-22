@@ -84,40 +84,40 @@
 
                 <div class="text-center" style="border: 1px solid black;border-radius: 25px;padding: 10px;width: 260px;position: relative;margin: auto;">
                     <label>Продукт:</label>
-                    <br>
-                    <input type="text" id="product-name">
+                    <br />
+                    <input type="text" id="product-name" />
 
-                    <br>
-                    <br>
+                    <br />
+                    <br />
 
                     <label>Количество:</label>
-                    <br>
-                    <input id="br" type="checkbox" value="бр." onchange="onQuantityTypeChange(this, 'kg')">
+                    <br />
+                    <input id="br" type="checkbox" value="бр." onchange="onQuantityTypeChange(this, 'kg')" />
                     <label for="br">бр.</label>
-                    <input id="kg" type="checkbox" value="кг." onchange="onQuantityTypeChange(this, 'br')" checked="checked" style="margin-left:15px;">
+                    <input id="kg" type="checkbox" value="кг." onchange="onQuantityTypeChange(this, 'br')" checked="checked" style="margin-left:15px;" />
                     <label for="kg">кг.</label>
-                    <input type="number" id="product-quantity" min="0">
+                    <input type="number" id="product-quantity" min="0" />
 
-                    <br>
-                    <br>
+                    <br />
+                    <br />
 
                     <label>Цена:</label>
-                    <br>
-                    <input type="number" id="product-price" min="0">
+                    <br />
+                    <input type="number" id="product-price" min="0" />
 
-                    <br>
-                    <br>
-                    <hr>
+                    <br />
+                    <br />
+                    <hr />
 
                     <button class="btn btn-primary" onclick="addProduct()">Добави</button>
                 </div>
 
-                <br>
+                <br />
 
                 <div style="margin-left:15px;">
                     <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Tърси име на продукт...">
-                    <br>
-                    <br>
+                    <br />
+                    <br />
 
                     <table width="300px">
                         <thead>
@@ -140,34 +140,39 @@
             <div class=" float-left hl" style="margin-left:15px; margin-right:15px;"></div>
 
             <div class="float-left text-center" style="width:530px;">
-                <div style="text-align: center; width: 530px;">
+                <div style="text-align:center; width:530px;">
                     <h4 style="text-decoration:underline;"> Калкулатор </h4>
-                    <br>
+                    <br />
                 </div>
 
-                <div class="text-center" style="border: 1px solid black; border-radius:25px; padding:10px; width: 260px;position: relative;margin: auto;">
+                <div class="text-center" style="border: 1px solid black; border-radius:25px; padding:10px; width: 230px;position: relative;margin: auto;">
                     <label>Продукт:</label>
-                    <br>
-                    <select id="added-products" style="height:30px; width:180px;">
+                    <br />
+                    <select id="added-products" disabled onchange="onProductForCalcSelected(this)" style="height:30px; width:180px;">
+                        <option value="" disabled selected>Избери продукт</option>
                     </select>
 
-                    <br>
-                    <br>
+                    <br />
+                    <br />
 
                     <label>Количество:</label>
-                    <input type="number" id="product-quantity-for-calc" min="0">
+                    <input id="br-calc" type="checkbox" value="бр." style="pointer-events:none;">
+                    <label>бр.</label>
+                    <input id="kg-calc" type="checkbox" value="кг." style="margin-left:15px; pointer-events:none;">
+                    <label>кг.</label>
+                    <input type="number" id="product-quantity-for-calc" min="0" />
 
-                    <br>
-                    <br>
-                    <hr>
+                    <br />
+                    <br />
+                    <hr />
 
                     <button class="btn btn-primary" onclick="addProductForCalc()">Добави</button>
                     <button class="btn btn-danger" onclick="clearCalcTable(true)">Изчисти</button>
                 </div>
 
-                <br>
-                <br>
-                <br>
+                <br />
+                <br />
+                <br />
 
                 <div style="margin-left:15px;">
                     <table>
@@ -197,6 +202,8 @@
                 var products = [];
                 var isProductTableEmpty = true;
                 var isCalcTableEmpty = true;
+                var quantityKg = " кг.";
+                var quantityPieces = " бр.";
 
                 var Product = function (name, quantity, quantityType, price) {
                     return {
@@ -205,6 +212,26 @@
                         quantityType: quantityType,
                         price: price
                     };
+                };
+
+
+                function onProductForCalcSelected(s) {
+                    debugger;
+                    var selection = s.value;
+
+                    var fullProductInfo = products.filter(function (value, index, arr) {
+                        return value.name == selection;
+                    })[0];
+
+                    var isKg = fullProductInfo.quantityType === quantityKg;
+
+                    if (isKg) {
+                        document.getElementById("kg-calc").checked = true;
+                        document.getElementById("br-calc").checked = false;
+                    } else {
+                        document.getElementById("br-calc").checked = true;
+                        document.getElementById("kg-calc").checked = false;
+                    }
                 };
 
                 function addProductForCalc() {
@@ -225,7 +252,7 @@
                     var formatedQuantity = "";
                     var formatedNeededQuantity = "";
 
-                    if (fullProductInfo.quantityType == "") {
+                    if (fullProductInfo.quantityType == quantityPieces) {
                         formatedQuantity = fullProductInfo.quantity;
                         formatedNeededQuantity = quantity.value;
                     } else {
@@ -287,7 +314,7 @@
 
                     var product = document.getElementById("product-name");
                     var quantity = document.getElementById("product-quantity");
-                    var quantityType = document.getElementById("br").checked ? "" : " кг.";
+                    var quantityType = document.getElementById("br").checked ? quantityPieces : quantityKg;
                     var price = document.getElementById("product-price");
 
                     var newProduct = new Product(product.value, quantity.value, quantityType, price.value);
@@ -295,7 +322,8 @@
 
 
                     var selectBox = document.getElementById('added-products');
-                    selectBox.options.add(new Option(product.value, product.value, false));
+                    selectBox.options.add(new Option(product.value, product.value, false, false));
+                    selectBox.disabled = false;
 
                     var row = table.insertRow();
 
@@ -303,15 +331,15 @@
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
                     var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
+                    //var cell4 = row.insertCell(3);
 
                     // Add some text to the new cells:
                     cell1.innerHTML = product.value;
                     cell2.innerHTML = quantity.value + quantityType;
                     cell3.innerHTML = price.value + " лв.";
-                    cell4.innerHTML = quantityType == "" ? "брой" : "килограм";
-                    cell4.style.visible = false;
-                    cell4.style.display = "none";
+                    //cell4.innerHTML = quantityType == quantityPieces ? "брой" : "килограм";
+                    //cell4.style.visible = false;
+                    //cell4.style.display = "none";
 
                     product.value = "";
                     quantity.value = "";
