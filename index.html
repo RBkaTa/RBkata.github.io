@@ -48,9 +48,31 @@
                     background-color: #dddddd;
                 }
 
+                .hl {
+                    border-bottom: 4px solid gray;
+                    width: 100%;
+                    display: none;
+                    margin: 20px;
+                }
+
                 .vl {
                     border-left: 4px solid gray;
                     height: 800px;
+                }
+
+                @media (max-width: 1200px) {
+                    .vl {
+                        display: none;
+                    }
+
+                    .hl {
+                        display: block;
+                    }
+
+                    .float-left.text-center {
+                        float: none !important;
+                        margin: auto;
+                    }
                 }
             </style>
 
@@ -92,7 +114,7 @@
                     <br>
                     <br>
 
-                    <table id="products-table" width="300px">
+                    <table width="300px">
                         <thead>
                             <tr>
                                 <th>Продукт</th>
@@ -100,7 +122,10 @@
                                 <th>Цена</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="products-table">
+                            <tr>
+                                <td colspan="3">Няма данни.</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -108,8 +133,8 @@
 
             <div class=" float-left vl" style="margin-left:15px; margin-right:15px;"></div>
 
-            <div class="float-left" style="width:530px;">   
-                <div style="text-align:center; width:530px;">
+            <div class="float-left" style="width:530px;">
+                <div style="text-align: center; width: 530px;">
                     <h4> Калкулатор </h4>
                     <br>
                 </div>
@@ -131,7 +156,7 @@
                     <hr>
 
                     <button class="btn btn-primary" onclick="addProductForCalc()">Добави</button>
-                    <button class="btn btn-danger" onclick="clearCalcTable()">Изчисти</button>
+                    <button class="btn btn-danger" onclick="clearCalcTable(true)">Изчисти</button>
                 </div>
 
                 <br>
@@ -148,6 +173,9 @@
                             </tr>
                         </thead>
                         <tbody id="calculate-products-table">
+                            <tr>
+                                <td colspan="3">Няма данни.</td>
+                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>
@@ -161,6 +189,8 @@
 
             <script>
                 var products = [];
+                var isProductTableEmpty = true;
+                var isCalcTableEmpty = true;
 
                 var Product = function (name, quantity, quantityType, price) {
                     return {
@@ -172,6 +202,11 @@
                 };
 
                 function addProductForCalc() {
+                    if (isCalcTableEmpty) {
+                        clearCalcTable(false);
+                        isCalcTableEmpty = false;
+                    }
+
                     var table = document.getElementById("calculate-products-table");
 
                     var product = document.getElementById("added-products").value;
@@ -213,13 +248,35 @@
                     quantity.value = "";
                 };
 
-                function clearCalcTable() {
+                function clearCalcTable(showEmptyText) {
                     var table = document.getElementById("calculate-products-table");
-                    table.innerHTML = "";
+
+                    if (showEmptyText) {
+                        table.innerHTML = "";
+
+                        var row = table.insertRow();
+                        var cell1 = row.insertCell(0);
+                        cell1.colSpan = 3;
+                        cell1.innerHTML = "Няма данни.";
+                        isCalcTableEmpty = true;
+                    } else {
+                        table.innerHTML = "";
+                    }
+
                     document.getElementById("calc-sum").innerText = 0;
                 };
 
+                function clearProductsTable(showEmptyText) {
+                    var table = document.getElementById("products-table");
+                    table.innerHTML = "";
+                };
+
                 function addProduct() {
+                    if (isProductTableEmpty) {
+                        clearProductsTable();
+                        isProductTableEmpty = false;
+                    }
+
                     var table = document.getElementById("products-table");
 
                     var product = document.getElementById("product-name");
