@@ -25,7 +25,270 @@
     </style>
 </head>
 <body>
-    <div id="info-div"></div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            <style>
+                table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                td, th {
+                    border: 1px solid #dddddd;
+                    text-align: center;
+                    padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #dddddd;
+                }
+
+                .vl {
+                    border-left: 4px solid gray;
+                    height: 800px;
+                }
+            </style>
+
+            <div class="float-left text-center" style="width:530px;">
+                <div class="text-center" style="border: 1px solid black;border-radius: 25px;padding: 10px;width: 260px;position: relative;margin: auto;">
+                    <label>Продукт:</label>
+                    <br>
+                    <input type="text" id="product-name">
+
+                    <br>
+                    <br>
+
+                    <label>Количество:</label>
+                    <br>
+                    <input id="br" type="checkbox" value="бр." onchange="onQuantityTypeChange(this, 'kg')">
+                    <label for="br">бр.</label>
+                    <input id="kg" type="checkbox" value="кг." onchange="onQuantityTypeChange(this, 'br')" checked="checked" style="margin-left:15px;">
+                    <label for="kg">кг.</label>
+                    <input type="number" id="product-quantity" min="0">
+
+                    <br>
+                    <br>
+
+                    <label>Цена:</label>
+                    <br>
+                    <input type="number" id="product-price" min="0">
+
+                    <br>
+                    <br>
+                    <hr>
+
+                    <button class="btn btn-primary" onclick="addProduct()">Добави</button>
+                </div>
+
+                <br>
+
+                <div style="margin-left:15px;">
+                    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Tърси име на продукт...">
+                    <br>
+                    <br>
+
+                    <table id="products-table" width="300px">
+                        <thead>
+                            <tr>
+                                <th>Продукт</th>
+                                <th>Количество</th>
+                                <th>Цена</th>
+                            </tr>
+                            <tr style=""><td>zele</td><td>23</td><td>17.5 лв.</td><td style="display: none;">брой</td></tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class=" float-left vl" style="margin-left:15px; margin-right:15px;"></div>
+
+            <div class="float-left" style="width:530px;">
+                <div style="text-align:center; width:530px;">
+                    <h4> Калкулатор </h4>
+                    <br>
+                </div>
+
+                <div class="text-center" style="border: 1px solid black; border-radius:25px; padding:10px; width: 230px;position: relative;margin: auto;">
+                    <label>Продукт:</label>
+                    <br>
+                    <select id="added-products" style="height:30px; width:180px;">
+                        <option value="zele">zele</option>
+                    </select>
+
+                    <br>
+                    <br>
+
+                    <label>Количество:</label>
+                    <input type="number" id="product-quantity-for-calc" min="0">
+
+                    <br>
+                    <br>
+                    <hr>
+
+                    <button class="btn btn-primary" onclick="addProductForCalc()">Добави</button>
+                    <button class="btn btn-danger" onclick="clearCalcTable()">Изчисти</button>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div style="margin-left:15px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Продукт</th>
+                                <th>Количество</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calculate-products-table">
+                            <tr><td>zele</td><td>5</td><td>3.80 лв.</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Общо:</td>
+                                <td id="calc-sum">3.80 лв.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <script>
+                var products = [];
+
+                var Product = function (name, quantity, quantityType, price) {
+                    return {
+                        name: name,
+                        quantity: quantity,
+                        quantityType: quantityType,
+                        price: price
+                    };
+                };
+
+                function addProductForCalc() {
+                    var table = document.getElementById("calculate-products-table");
+
+                    var product = document.getElementById("added-products").value;
+                    var quantity = document.getElementById("product-quantity-for-calc");
+
+                    var fullProductInfo = products.filter(function (value, index, arr) {
+                        return value.name == product;
+                    })[0];
+
+                    var formatedQuantity = "";
+                    var formatedNeededQuantity = "";
+
+                    if (fullProductInfo.quantityType == "") {
+                        formatedQuantity = fullProductInfo.quantity;
+                        formatedNeededQuantity = quantity.value;
+                    } else {
+                        formatedQuantity = fullProductInfo.quantity * 1000;
+                        formatedNeededQuantity = quantity.value * 1000;
+                    }
+
+                    var newPrice = fullProductInfo.price * (formatedNeededQuantity / formatedQuantity);
+
+                    var row = table.insertRow();
+
+                    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+
+                    // Add some text to the new cells:
+                    cell1.innerHTML = product;
+                    cell2.innerHTML = quantity.value + fullProductInfo.quantityType;
+                    cell3.innerHTML = newPrice.toFixed(2) + " лв.";
+
+                    var sum = parseFloat(document.getElementById("calc-sum").innerText);
+
+                    document.getElementById("calc-sum").innerText = (sum + newPrice).toFixed(2) + " лв.";
+
+                    quantity.value = "";
+                };
+
+                function clearCalcTable() {
+                    var table = document.getElementById("calculate-products-table");
+                    table.innerHTML = "";
+                    document.getElementById("calc-sum").innerText = 0;
+                };
+
+                function addProduct() {
+                    var table = document.getElementById("products-table");
+
+                    var product = document.getElementById("product-name");
+                    var quantity = document.getElementById("product-quantity");
+                    var quantityType = document.getElementById("br").checked ? "" : " кг.";
+                    var price = document.getElementById("product-price");
+
+                    var newProduct = new Product(product.value, quantity.value, quantityType, price.value);
+                    products.push(newProduct);
+
+
+                    var selectBox = document.getElementById('added-products');
+                    selectBox.options.add(new Option(product.value, product.value, false));
+
+                    var row = table.insertRow();
+
+                    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+
+                    // Add some text to the new cells:
+                    cell1.innerHTML = product.value;
+                    cell2.innerHTML = quantity.value + quantityType;
+                    cell3.innerHTML = price.value + " лв.";
+                    cell4.innerHTML = quantityType == "" ? "брой" : "килограм";
+                    cell4.style.visible = false;
+                    cell4.style.display = "none";
+
+                    product.value = "";
+                    quantity.value = "";
+                    price.value = "";
+                };
+
+                function onQuantityTypeChange(s, type) {
+                    var value = s.checked;
+                    var otherCheck = document.getElementById(type);
+                    otherCheck.checked = !value;
+                };
+
+                function searchFunction() {
+                    // Declare variables
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("products-table");
+                    tr = table.getElementsByTagName("tr");
+
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            </script>
+        </main>
+    </div>
+
+
+    <!--<div id="info-div"></div>
     <div id="info-div-2"></div>
     <div id="info-div-3"></div>
     <h1>Updated 6:31 </h1>
@@ -276,8 +539,8 @@
                 </td>
             </tr>
         </tbody>
-    </table>
-
+    </table>-->
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!--<script>
         function onClick() {
             //document.getElementById("info-div").innerHTML = isIOS();
