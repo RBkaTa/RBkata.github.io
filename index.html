@@ -1,12 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SoftUni Blog</title>
     <link rel="stylesheet" href="styles/site.css" />
-    <script src="scripts/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="scripts/jquery-1.10.2.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <!--<script src="scripts/bootstrap.js"></script>-->
     <style>
         .windowsTable {
@@ -31,24 +37,24 @@
             cursor: pointer;
         }
 
-            /* The actual popup (appears on top) */
-            .popup .popuptext {
-                visibility: hidden;
-                /*width: 160px;*/
-                background-color: #555;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 8px 0;
-                position: absolute;
-                z-index: 1;
-                margin: auto;
-                left: 320%;
-                top: -40%;
-            }
+        /* The actual popup (appears on top) */
+        .popup .popuptext {
+            visibility: hidden;
+            /*width: 160px;*/
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            margin: auto;
+            left: 320%;
+            top: -40%;
+        }
 
-            /* Popup arrow */
-            /*.popup .popuptext::after {
+        /* Popup arrow */
+        /*.popup .popuptext::after {
                     content: "";
                     position: absolute;
                     top: 100%;
@@ -59,12 +65,12 @@
                     border-color: #555 transparent transparent transparent;
                 }*/
 
-            /* Toggle this class when clicking on the popup container (hide and show the popup) */
-            .popup .show {
-                visibility: visible;
-                -webkit-animation: fadeIn 1s;
-                animation: fadeIn 1s
-            }
+        /* Toggle this class when clicking on the popup container (hide and show the popup) */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s
+        }
 
         /* Add animation (fade in the popup) */
         @-webkit-keyframes fadeIn {
@@ -88,6 +94,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <style>
@@ -280,7 +287,7 @@
         }
     </style>
 
-<div id="myModal" class="Modal">
+    <div id="myModal" class="Modal">
         <!-- Modal content -->
         <div class="Modal-content">
             <!-- <span id="closeModal" class="Close" onclick="onModalClose()">&times;</span> -->
@@ -291,12 +298,8 @@
         </div>
     </div>
 
-    <img id="dance-cat" src="cat.gif">
+    <!-- <img id="dance-cat" src="cat.gif"> -->
     <img id="insomnia-boys" src="insomnia-boys-ready.gif">
-    <!-- <div id="insomnia-boys">
-        <img id="insomnia-boy-left" src="insomnia-boys-transperant.left.gif" style="display: none;">
-        <img id="insomnia-boy-right" src="insomnia-boys-transperant.right.gif" style="display: none; position: absolute; left: 192px;">
-    </div> -->
 
     <div class="wrapper">
         <!-- <div class="title" style="background-color: gray;">Хари пада на различни песни</div> -->
@@ -332,6 +335,11 @@
                 <span>Нови приятели: </span> <span id="friends-count"></span>
             </div>
         </div>
+    </div>
+
+    <div id="success-box" class="alert success">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p id="story-message">Testovo syob]enie</p>
     </div>
 
     <script id="modal">
@@ -384,6 +392,16 @@
         var isShotGiven = false;
         var isHelpGiven = false;
 
+        function _toggleMessageBox(message) {
+            $("#success-box").slideDown("slow");
+
+            document.getElementById("story-message").innerHTML = message;
+            var timeout = setTimeout(function () {
+                $("#success-box").slideUp("slow");
+                clearTimeout(timeout);
+            }, 8000);
+        };
+
         function onPartyStart() {
             let audio = new Audio("insomnia.mp3");
             audio.loop = true;
@@ -391,10 +409,10 @@
             audio.muted = false;
             audio.play();
 
-            setTimeout(function () {
-                var cat = document.getElementById("dance-cat");
-                cat.style.visibility = "visible";
-            }, 15000);
+            // setTimeout(function () {
+            //     var cat = document.getElementById("dance-cat");
+            //     cat.style.visibility = "visible";
+            // }, 15000);
 
             onModalClose();
         }
@@ -406,6 +424,8 @@
             video.removeAttribute("loop");
             //video.load();
             //video.play();
+
+            _toggleMessageBox("Хари ти благодари за помоща и те кани на по шот!");
 
             isHelpGiven = true;
             document.getElementById("help-hari-btn").setAttribute("disabled", "");
@@ -422,6 +442,8 @@
             video.removeAttribute("loop");
             //video.load();
             //video.play();
+
+            _toggleMessageBox("Хари много хареса шота!");
 
             isShotGiven = true;
             document.getElementById("help-hari-btn").removeAttribute("disabled");
@@ -444,22 +466,19 @@
 
             document.getElementById("friends-count").innerHTML = friendsCount;
 
-            function whenHariMakeNewFriend(){
+            function whenHariMakeNewFriend() {
                 video.setAttribute("src", 'hari-pada.mp4');
-                
-                setTimeout(function(){
+                _toggleMessageBox("Хари си намери нов приятел и го заведе при барманите... Изпиха по 5 шота.");
+
+                setTimeout(function () {
                     video.removeEventListener('ended', whenHariMakeNewFriend);
-                    video.setAttribute("loop", "");
+
                     shotsCount += 5;
                     document.getElementById("shots-count").innerHTML = shotsCount;
 
-                    //video.setAttribute("src", 'hari-lets-dance.mp4');
-                }, 3000);
-                
-                // video.addEventListener('ended', (ev) => {
-                //     alert("Не може да казваш на Харито да си ходи ...")
-                //     video.removeEventListener('ended', whenHariGoHome);
-                // });
+                    video.setAttribute("src", 'hari-lets-dance.mp4');
+                    video.setAttribute("loop", "");
+                }, 7000);
             }
 
             video.addEventListener('ended', whenHariMakeNewFriend);
@@ -474,6 +493,8 @@
             }
             //video.load();
             //video.play();
+
+            _toggleMessageBox("Ти остави Хари сам в Елвиса... Хари отива към бара за нов куест!");
         }
 
         function onHariGoHome() {
@@ -482,29 +503,26 @@
             video.setAttribute("src", 'hari-go-home.mp4');
             video.removeAttribute("loop");
 
-            function whenHariGoHome(){
+            function whenHariGoHome() {
                 video.setAttribute("src", 'hari-pada.mp4');
-                
-                setTimeout(function(){
-                    alert("Не може да казваш на Харито да си ходи ...")
+                _toggleMessageBox("Не може да казваш на Харито да си ходи ... Той изпи още 2 шота с бармана и остана на бара!");
+
+                setTimeout(function () {
+                    //alert("Не може да казваш на Харито да си ходи ...")
                     video.removeEventListener('ended', whenHariGoHome);
-                    
+
                     shotsCount += 2;
                     document.getElementById("shots-count").innerHTML = shotsCount;
 
                     video.setAttribute("src", 'hari-lets-dance.mp4');
-                }, 3000);
-                
-                // video.addEventListener('ended', (ev) => {
-                //     alert("Не може да казваш на Харито да си ходи ...")
-                //     video.removeEventListener('ended', whenHariGoHome);
-                // });
+                    video.setAttribute("loop", "");
+                }, 7000);
             }
 
             video.addEventListener('ended', whenHariGoHome);
         }
 
-        
+
     </script>
 
 
@@ -1466,10 +1484,5 @@
     </footer>-->
 
 </body>
+
 </html>
-
-
-
-
-
-
