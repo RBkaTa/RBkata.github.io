@@ -123,6 +123,12 @@
             clip: rect(4px, 500px, 380px, 2px);
         }
 
+        #insomnia-boys {
+            position: absolute;
+            left: 0px;
+            top: 50px;
+        }
+
         .video {
             grid-column: 2;
             grid-row: 2 / 5;
@@ -131,6 +137,13 @@
         .songs {
             grid-column: 3;
             grid-row: 2 / 5;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        .info {
+            grid-column: 3;
+            grid-row: 5;
             background-color: gray;
             border: 1px solid black;
         }
@@ -146,6 +159,14 @@
             cursor: pointer;
         }
 
+        .btn:disabled,
+        .btn[disabled] {
+            border: 1px solid #999999;
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+
         .btn-lets-dance {
             background-color: white;
             color: black;
@@ -157,13 +178,13 @@
             color: white;
         }
 
-        .btn-push {
+        .btn-drink {
             background-color: white;
             color: black;
             border: 2px solid red;
         }
 
-        .btn-push:hover {
+        .btn-drink:hover {
             background-color: red;
             color: white;
         }
@@ -185,8 +206,19 @@
             border: 2px solid orange;
         }
 
-        .btn-friends:hover{
+        .btn-friends:hover {
             background-color: orange;
+            color: white;
+        }
+
+        .btn-go-home {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+        }
+
+        .btn-go-home:hover {
+            background-color: black;
             color: white;
         }
     </style>
@@ -248,7 +280,7 @@
         }
     </style>
 
-    <div id="myModal" class="Modal">
+<div id="myModal" class="Modal">
         <!-- Modal content -->
         <div class="Modal-content">
             <!-- <span id="closeModal" class="Close" onclick="onModalClose()">&times;</span> -->
@@ -258,9 +290,13 @@
             <div class="btn btn-pull" onclick="onPartyStart()" style="margin-left: 38px;">Нека почерпим Харито</div>
         </div>
     </div>
-    <!-- <button id="myBtn" onclick="onModalBtnClick()">Open Modal</button> -->
 
     <img id="dance-cat" src="cat.gif">
+    <img id="insomnia-boys" src="insomnia-boys-ready.gif">
+    <!-- <div id="insomnia-boys">
+        <img id="insomnia-boy-left" src="insomnia-boys-transperant.left.gif" style="display: none;">
+        <img id="insomnia-boy-right" src="insomnia-boys-transperant.right.gif" style="display: none; position: absolute; left: 192px;">
+    </div> -->
 
     <div class="wrapper">
         <!-- <div class="title" style="background-color: gray;">Хари пада на различни песни</div> -->
@@ -271,14 +307,30 @@
                 <source src="hari-lets-dance.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+
         </div>
         <div class="songs">
             <h3 style="color: white; text-align: center;">Бъди част от преживяването на Хари</h3>
             <hr>
-            <div class="btn btn-lets-dance" onclick="onLetsDance()">Остави Хари в Елвиса</div>
-            <div class="btn btn-push" onclick="onHariPush()">Бутни Хари</div>
-            <div class="btn btn-pull" onclick="onHariPull()">Помогни на Хари</div>
-            <div class="btn btn-friends" onclick="onHariMakeFriends()">Хари намира нови приятели</div>
+            <button class="btn btn-lets-dance" onclick="onLetsDance()">Остави Хари в Елвиса</button>
+            <button class="btn btn-drink" onclick="onHariDrinkShot()">Почерпи Хари с шот</button>
+            <button id="help-hari-btn" class="btn btn-pull" onclick="onHariPull()" disabled>Помогни на Хари</button>
+            <button class="btn btn-friends" onclick="onHariMakeFriends()">Намери нов приятел на Хари</button>
+            <button class="btn btn-go-home" onclick="onHariGoHome()">Изпрати Хари да си ходи</button>
+        </div>
+        <div class="info" style="color: white;">
+            <h3 style="color: white; text-align: center;">Основна информация</h3>
+            <hr>
+            <div style="margin-left: 10px;">
+                <span>Посетители на Хари: </span> <span id="visit-count"></span>
+                <br>
+                <p></p>
+                <span>Помощ към Хари: </span> <span id="help-count"></span>
+                <p></p>
+                <span>Изпити шотове: </span> <span id="shots-count"></span>
+                <p></p>
+                <span>Нови приятели: </span> <span id="friends-count"></span>
+            </div>
         </div>
     </div>
 
@@ -324,9 +376,13 @@
     </script>
 
     <script>
-            (function () {
-                //onModalBtnClick();
-            }())
+        var shotsCount = 0;
+        var helpCount = 0;
+        var visitCount = 0;
+        var friendsCount = 0;
+
+        var isShotGiven = false;
+        var isHelpGiven = false;
 
         function onPartyStart() {
             let audio = new Audio("insomnia.mp3");
@@ -349,36 +405,106 @@
             video.setAttribute("src", 'hari-se-izpravq.mp4');
             video.removeAttribute("loop");
             //video.load();
-            video.play();
+            //video.play();
+
+            isHelpGiven = true;
+            document.getElementById("help-hari-btn").setAttribute("disabled", "");
+
+            helpCount++;
+
+            document.getElementById("help-count").innerHTML = helpCount + " пъти";
         }
 
-        function onHariPush() {
+        function onHariDrinkShot() {
             var video = document.getElementById("hari-video");
 
             video.setAttribute("src", 'hari-pada.mp4');
             video.removeAttribute("loop");
             //video.load();
-            video.play();
+            //video.play();
+
+            isShotGiven = true;
+            document.getElementById("help-hari-btn").removeAttribute("disabled");
+
+            shotsCount++;
+
+            document.getElementById("shots-count").innerHTML = shotsCount;
         }
 
         function onHariMakeFriends() {
             var video = document.getElementById("hari-video");
 
             video.setAttribute("src", 'hari-new-friends.mp4');
-            //video.removeAttribute("loop");
-            video.addAttribute("loop", "");
+            video.removeAttribute("loop");
+
             //video.load();
-            video.play();
+            //video.play();
+
+            friendsCount++;
+
+            document.getElementById("friends-count").innerHTML = friendsCount;
+
+            function whenHariMakeNewFriend(){
+                video.setAttribute("src", 'hari-pada.mp4');
+                
+                setTimeout(function(){
+                    video.removeEventListener('ended', whenHariMakeNewFriend);
+                    video.setAttribute("loop", "");
+                    shotsCount += 5;
+                    document.getElementById("shots-count").innerHTML = shotsCount;
+
+                    //video.setAttribute("src", 'hari-lets-dance.mp4');
+                }, 3000);
+                
+                // video.addEventListener('ended', (ev) => {
+                //     alert("Не може да казваш на Харито да си ходи ...")
+                //     video.removeEventListener('ended', whenHariGoHome);
+                // });
+            }
+
+            video.addEventListener('ended', whenHariMakeNewFriend);
         }
 
         function onLetsDance() {
             var video = document.getElementById("hari-video");
 
             video.setAttribute("src", 'hari-lets-dance.mp4');
-            video.setAttribute("loop", "");
+            if (!video.hasAttribute("loop")) {
+                video.setAttribute("loop", "");
+            }
             //video.load();
-            video.play();
+            //video.play();
         }
+
+        function onHariGoHome() {
+            var video = document.getElementById("hari-video");
+
+            video.setAttribute("src", 'hari-go-home.mp4');
+            video.removeAttribute("loop");
+
+            function whenHariGoHome(){
+                video.setAttribute("src", 'hari-pada.mp4');
+                
+                setTimeout(function(){
+                    alert("Не може да казваш на Харито да си ходи ...")
+                    video.removeEventListener('ended', whenHariGoHome);
+                    
+                    shotsCount += 2;
+                    document.getElementById("shots-count").innerHTML = shotsCount;
+
+                    video.setAttribute("src", 'hari-lets-dance.mp4');
+                }, 3000);
+                
+                // video.addEventListener('ended', (ev) => {
+                //     alert("Не може да казваш на Харито да си ходи ...")
+                //     video.removeEventListener('ended', whenHariGoHome);
+                // });
+            }
+
+            video.addEventListener('ended', whenHariGoHome);
+        }
+
+        
     </script>
 
 
