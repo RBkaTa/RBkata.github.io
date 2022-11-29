@@ -1,5 +1,5 @@
 var startColor = "#24EBAF";
-var colorSaturation = 83;
+var colorSaturation = 17;//83;
 var colorLightness = 53;
 var pickColor = true;
 
