@@ -444,8 +444,8 @@ form .form-div-50 {
 .barBackground {
   height: 90%;
   width: 100%;
-  mask-image: url(glasspoint/mask.72cf50a2.svg);
-  -webkit-mask-image: url(glasspoint/mask.72cf50a2.svg);
+  mask-image: url(site/mask.72cf50a2.svg);
+  -webkit-mask-image: url(site/mask.72cf50a2.svg);
   mask-size: contain;
   -webkit-mask-size: contain;
 }
