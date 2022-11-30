@@ -20,6 +20,7 @@ initRightSlider(curve);
 function createPickerInstance() {
     let picker = new iro.ColorPicker("#picker", {
         width: 250,
+		padding: 0,
         color: startColor,
         wheelAngle: 270,
         wheelDirection: "clockwise",
