@@ -606,3 +606,9 @@ form .form-div-50 {
   z-index: 23;
   opacity: 0;
 }
+
+@media (max-width: 770px) {
+  #purchase {
+    margin-top: 93px !important;
+  }
+}
