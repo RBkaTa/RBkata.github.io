@@ -158,9 +158,28 @@ function initLeftSlider(curve) {
     drawThumb(percent);
 }
 
+var states = {
+    hide: "show",
+    show: "hide"
+};
+var currState = states.show;
+$("#clear-mirror").on("click", function () {	
+	currState = states[currState];
 
-$("#clear-mirror").on("click", function () {
-    $(".image-2").toggle();
+    var html = "";
+    switch (currState) {
+        case "show":
+            html = "Покажи отражение";
+            break;
+        case "hide":
+            html = "Махни отражение";
+            break;
+        default:
+            break;
+    }
+    
+    $("#clear-mirror").html(html);
+	$(".image-2").toggle();
     $(".image-overlay").toggle(0);
 })
 
