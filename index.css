@@ -28,7 +28,7 @@ body {
   top: 3%;
   z-index: 22222;
   /* margin: 25px; */
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 
 .info:hover {
@@ -42,7 +42,7 @@ body {
   bottom: 1%;
   /* top: 865px; */
   /* left: 50%; */
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 
 #arrow:hover {
