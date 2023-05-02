@@ -16,6 +16,11 @@ body {
   /* background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%); */
 }
 
+#slide_2 {
+  text-align: center;
+  margin: 70px;
+}
+
 #logo {
   width: 100%;
   text-align: center;
