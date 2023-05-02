@@ -1,192 +1,97 @@
-<html>
+<html lang="en">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
-    <link type="text/css" rel="stylesheet" href="full-controll.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="carusel.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div id="__next"  style="padding-bottom: 40px;">
-        <div>
-            <div class="picker container">
-                <div class="images-holder"><img class="image-2" src="site/2.png" alt="image" style="opacity: 1;">
-                    <div class="color-overlay" style="background-color: rgb(21, 234, 170);"></div>
-                    <img class="image-overlay" src="site/2_highlights.png" alt="image" style="opacity: 0.5;">
-                    <img class="image-1" src="site/1_3.png" alt="image">
-                    <img class="image-3" src="site/3.png" alt="image">
-                </div>
-                <div>
-                    <div class="color-picker-section border" style="padding: 14px;">
-                        <h3>Изберете цвят</h3>
-                        <div>
-                            <div class="outerContainer">
-                                <div class="colorWheel"
-                                    style="width: 313px;justify-content: center; align-self: center;">
+    <div id="logo">
+        <img src="LOGO.png" width="7%">
+    </div>
+    <div id="slide_1">
+        <div class="container">
+            <div class="wrap-slider" id="js-wrapSlider">
+                <ul class="js-slider">
+                    <li class="item">
+                        <img src="SLIDE-1.png" />
 
-                                    <div class="saturationBar slider-container">
-                                        <input id="rangeLeft" type="range" min="0" max="100">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 150px; top: 250px;"
+                            onclick="fast_scroll_btn_click()">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 250px; top: 500px;"
+                            onclick="fast_scroll_btn_click()">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 450px; top: 500px;"
+                            onclick="fast_scroll_btn_click()">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 880px; top: 290px;"
+                            onclick="fast_scroll_btn_click()">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 1220px; top: 450px;"
+                            onclick="fast_scroll_btn_click()">
+                        <img class="info" src="puls-dot.gif" width="50"
+                            style="position: absolute; z-index: 22222; left: 1520px; top: 450px;"
+                            onclick="fast_scroll_btn_click()">
+                    </li>
 
-                                        <svg id="slider" height="240" width="80"
-                                            style="margin-left: -54px; position: absolute; z-index: 1; width: 50px; overflow: visible;">
-                                            <path id="curveLeft" stroke="transparent" stroke-width="7"
-                                                fill="transparent" />
-                                            <circle id="thumbLeft" r="6" fill="#ffffff" stroke-width="1"
-                                                stroke="#111" />
-                                        </svg>
-                                        <div id="pathLeftColor" class="barBackground"
-                                            style="background: linear-gradient(rgb(16, 255, 183), rgb(136, 136, 136)); margin-top: 12.5px; width: 70px;">
-                                        </div>
+                    <!-- <li class="item"><a class="hop" href="#">lien 4</a></li> -->
+                </ul>
 
-                                    </div>
-
-                                    <div id="picker" style="height: 250px; width: 250px; margin: auto 8%;"></div>
-
-                                    <div class="lightnessBar slider-container" style="transform: scaleX(-1);">
-                                        <input id="rangeRight" type="range" min="0" max="100"
-                                            style="transform: scale(-1);">
-                                        <!-- <svg id="slider" height="240" width="80" style="position: inherit; z-index: 2;">
-                                            <path id="curveRight" stroke="green" stroke-width="7" fill="transparent" />
-                                            <circle id="thumbRight" r="6" fill="#ffffff" stroke-width="1"
-                                                stroke="#111" />
-                                        </svg> -->
-
-                                        <svg id="slider" height="240" width="80"
-                                            style="margin-left: -54px; position: absolute; z-index: 1; width: 50px; overflow: visible;">
-                                            <path id="curveRight" stroke="transparent" stroke-width="7"
-                                                fill="transparent" />
-                                            <circle id="thumbRight" r="6" fill="#ffffff" stroke-width="1"
-                                                stroke="#111" />
-                                        </svg>
-
-                                        <div id="pathRightColor" class="barBackground"
-                                            style=" background: linear-gradient(white, rgb(21, 234, 170), black); margin-top: 12.5px; width: 70px;">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="pickedColorContainer">
-                                    <div id="colorPlace" class="pickedColor">
-                                        <div class="hexValue"
-                                            style="font-size: 25px; color: white;text-transform: uppercase;">#24EBAF
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button id="clear-mirror">Махни отражение</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="picker container border">
-                <div id="colored" class="shadow" style="padding: 20px; border-radius: 12px; width: 100%; margin: 0px;">
-                    <h3 style="margin: 0px 0px 20px;">оцветено стъкло</h3>
-                    <form name="calculator_2_form" class="dynamic_form" id="calculator_2_form">
-                        <div class="form-div-50" style="display: inline-block; width: 50%; float: left;">
-                            <label for="calculator_2_length">Дължина на гърба (в см):
-                                <input id="calculator_2_length_value"
-                                    onkeyup="sliderValueDisplay('calculator_2_length', this.value); recalculateCalculator2();"
-                                    onchange="sliderValueDisplay('calculator_2_length', this.value); recalculateCalculator2();"
-                                    type="number" value="280"
-                                    style="display: inline-block; width: 120px; padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px; margin-left: 2em;">
-                            </label>
-                            <input type="range" min="150" max="1000" value="280" id="calculator_2_length"
-                                name="calculator_2_length"
-                                onchange="sliderValueDisplay('calculator_2_length_value', this.value); recalculateCalculator2();"
-                                onmousemove="sliderValueDisplay('calculator_2_length_value', this.value); recalculateCalculator2();"
-                                style="background-color: rgb(36, 235, 175);">
-
-
-                            <label for="calculator_2_height">Височина на гърба (в см):
-                                <input type="number" value="60" id="calculator_2_height_value"
-                                    onkeyup="sliderValueDisplay('calculator_2_height', this.value); recalculateCalculator2();"
-                                    onchange="sliderValueDisplay('calculator_2_height', this.value); recalculateCalculator2();"
-                                    style="display: inline-block; width: 120px; padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px; margin-left: 2em;">
-                            </label>
-                            <input type="range" min="40" max="80" value="60" class="slider" name="calculator_2_height"
-                                id="calculator_2_height"
-                                onchange="sliderValueDisplay('calculator_2_height_value', this.value); recalculateCalculator2()"
-                                onmousemove="sliderValueDisplay('calculator_2_height_value', this.value); recalculateCalculator2()">
-
-                            <div style="display: inline-block; width: 50%; float: left;">
-                                <label for="calculator_2_glass_width">Дебелина на стъклото:</label>
-                                <select name="calculator_2_glass_width" id="calculator_2_glass_width"
-                                    onchange="recalculateCalculator2()"
-                                    style="padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px; background-color: rgb(255, 255, 255);">
-                                    <option value="4">4mm</option>
-                                    <option value="6">6mm</option>
-                                </select>
-                            </div>
-                            <div style="display: inline-block; width: 50%;">
-                                <label for="calculator_2_holes">Отвори за контакти(брой):</label>
-                                <select name="calculator_2_holes" id="calculator_2_holes"
-                                    onchange="recalculateCalculator2()"
-                                    style="padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px; background-color: rgb(255, 255, 255);">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                            <!-- <span id="total_calc_2_value" style="display: inline-block; font-weight: 700;">Общо: 316.51
-                                лв.</span> -->
-                        </div>
-                        <div class="form-div-50"
-                            style="display: inline-block !important; width: 50%; margin-bottom: auto; position: relative;">
-                            <label for="client_name">Вашите имена *:</label>
-                            <input name="client_name" type="text" id="client_name"
-                                style="width: 100%; padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px;">
-                            <label for="client_email">E-mail адрес *:</label>
-                            <input name="client_email" type="email" id="client_email"
-                                style="width: 100%; padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px;">
-                            <label for="client_phone">Телефон за връзка *:</label>
-                            <input name="client_phone" type="tel" id="client_phone"
-                                style="width: 100%; padding: 10px 20px; border: 1px solid rgb(54, 54, 54); outline: none; font-size: 16px;">
-                            <!-- <button
-                                style="background-color: rgb(32, 97, 152); display: block; width: 100%; font-size: 16px;">
-                                <a id="izplashtane"
-                                    href="https://tbibank.support/credit.php?cid=9d4f4b6b-395f-4b5d-a618-18cfa9ac0b4f"
-                                    target="_blank" style="text-decoration: none;">
-                                    <span style="color: rgb(255, 255, 255);">Вземи наизплащане</span>
-                                </a>
-                            </button> -->
-                            <button id="purchase" onclick="sendPurchaseCalculator2()"
-                                style="background-color: rgb(32, 97, 152); display: block; width: 50% !important; font-size: 16px; position: absolute; left:25%;margin-top: 80px;">
-                                <span style="color: rgb(255, 255, 255);">Изпрати запитване</span>
-                            </button>
-                            <div style=" margin-top: 22px;">
-                                <p style="margin: 4px auto 0 auto;">Възможност за покупка на изплащане</p>
-                                <!-- <img src="/images/tbi-logo-500px.jpg" width="" height="25" style="float: left;"> -->
-                                <img src="https://glasspoint.bg/images/tbi-logo-500px.jpg" width="" height="25"
-                                    style="float: left; margin-top: 5px;">
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>
-    <svg style="display: none;">
-        <defs>
-            <g id="custom-handle">
-                <circle cx="10" cy="10" r="10" stroke="black" stroke-width="1" fill="white" />
-            </g>
-        </defs>
-    </svg>
+    <div id="arrow" style="z-index: 22222;">
+        <img src="ARROW.png" width="2%" onclick="fast_scroll_btn_click()">
+    </div>
+    <div id="slide_2" style="text-align: center;">
+        <img id="slide_2_img" src="SLIDE-2.png" width="99%" style="margin-left: 10px;">
+    </div>
 
-    <script src="full-controll.js"></script>
+    <script src="carusel.js"></script>
+
+    <script>
+        var isOnTop = true;
+        function info_btn_click() {
+            // document.getElementById("slide_2").scrollIntoView({ behavior: 'smooth' }, true);
+            document.querySelector("#slide_2_img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
+            isOnTop = false;
+        }
+
+        function fast_scroll_btn_click() {
+            if (isOnTop) {
+                document.querySelector("#slide_2_img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
+
+                document.querySelector("#arrow img").classList.remove("arrow-up");
+                document.querySelector("#arrow img").classList.add("arrow-down");
+                // document.querySelector("#arrow img").style.transform = "rotate(180deg)";
+
+                isOnTop = false;
+            } else {
+                document.querySelector("#slide_1").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
+
+                document.querySelector("#arrow img").classList.remove("arrow-down");
+                document.querySelector("#arrow img").classList.add("arrow-up");
+                //document.querySelector("#arrow img").style.transform = "rotate(0deg)";
+
+                isOnTop = true;
+            }
+
+        }
+
+        // document.querySelector('.info').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     alert("test");
+        //     document.getElementById("slide_2").scrollIntoView({ behavior: 'smooth' }, true);
+        //     //document.querySelector("#slide_2").scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        // });
+    </script>
 </body>
 
 </html>

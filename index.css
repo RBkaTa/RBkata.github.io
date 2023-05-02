@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+}
+
+#logo {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 3%;
+  z-index: 22222;
+  /* margin: 25px; */
+  backdrop-filter: blur(4px);
+}
+
+.info:hover {
+  cursor: pointer;
+}
+
+#arrow {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 1%;
+  /* top: 865px; */
+  /* left: 50%; */
+  backdrop-filter: blur(4px);
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
+
+.arrow-up {
+  transform: rotate(0deg);
+  transition: 600ms ease all;
+}
+
+.arrow-down {
+  transform: rotate(180deg);
+  transition: 600ms ease all;
+}
