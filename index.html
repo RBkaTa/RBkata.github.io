@@ -28,20 +28,18 @@
                             style="position: absolute; z-index: 22222; left: 250px; top: 500px;"
                             onclick="fast_scroll_btn_click()">
                         <img class="info" src="puls-dot.gif" width="50"
-                            style="position: absolute; z-index: 22222; left: 450px; top: 500px;"
+                            style="position: absolute; z-index: 22222; left: 480px; top: 600px;"
                             onclick="fast_scroll_btn_click()">
                         <img class="info" src="puls-dot.gif" width="50"
-                            style="position: absolute; z-index: 22222; left: 880px; top: 290px;"
+                            style="position: absolute; z-index: 22222; left: 650px; top: 290px;"
                             onclick="fast_scroll_btn_click()">
                         <img class="info" src="puls-dot.gif" width="50"
-                            style="position: absolute; z-index: 22222; left: 1220px; top: 450px;"
+                            style="position: absolute; z-index: 22222; left: 1245px; top: 680px;"
                             onclick="fast_scroll_btn_click()">
                         <img class="info" src="puls-dot.gif" width="50"
                             style="position: absolute; z-index: 22222; left: 1520px; top: 450px;"
                             onclick="fast_scroll_btn_click()">
                     </li>
-
-                    <!-- <li class="item"><a class="hop" href="#">lien 4</a></li> -->
                 </ul>
 
             </div>
@@ -54,44 +52,9 @@
         <img id="slide_2_img" src="SLIDE-2.png" width="99%" style="margin-left: 10px;">
     </div>
 
+
+    <script src="index.js"></script>
     <script src="carusel.js"></script>
-
-    <script>
-        var isOnTop = true;
-        function info_btn_click() {
-            // document.getElementById("slide_2").scrollIntoView({ behavior: 'smooth' }, true);
-            document.querySelector("#slide_2_img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
-            isOnTop = false;
-        }
-
-        function fast_scroll_btn_click() {
-            if (isOnTop) {
-                document.querySelector("#slide_2_img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
-
-                document.querySelector("#arrow img").classList.remove("arrow-up");
-                document.querySelector("#arrow img").classList.add("arrow-down");
-                // document.querySelector("#arrow img").style.transform = "rotate(180deg)";
-
-                isOnTop = false;
-            } else {
-                document.querySelector("#slide_1").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
-
-                document.querySelector("#arrow img").classList.remove("arrow-down");
-                document.querySelector("#arrow img").classList.add("arrow-up");
-                //document.querySelector("#arrow img").style.transform = "rotate(0deg)";
-
-                isOnTop = true;
-            }
-
-        }
-
-        // document.querySelector('.info').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     alert("test");
-        //     document.getElementById("slide_2").scrollIntoView({ behavior: 'smooth' }, true);
-        //     //document.querySelector("#slide_2").scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        // });
-    </script>
 </body>
 
 </html>
