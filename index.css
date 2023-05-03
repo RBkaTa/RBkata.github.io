@@ -10,13 +10,13 @@ body {
 *:after {
   box-sizing: inherit;
 }
-/* 
+
 ::-webkit-scrollbar {
   width: 1em;
 }
 
 ::-webkit-scrollbar:hover {
-  width: 2em;
+  width: 1.5em;
 }
 
 ::-webkit-scrollbar-track {
@@ -30,7 +30,7 @@ body {
   border-radius: 100vw;
   background-color: #8070d4;
   background-clip: content-box;
-} */
+}
 
 body {
   width: 100%;
