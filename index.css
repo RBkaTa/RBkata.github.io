@@ -10,7 +10,7 @@ body {
 *:after {
   box-sizing: inherit;
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 1em;
 }
@@ -28,13 +28,8 @@ body {
 ::-webkit-scrollbar-thumb {
   border: 0.25em solid transparent;
   border-radius: 100vw;
-  /* background-color: #71bf44; */
   background-color: #8070d4;
   background-clip: content-box;
-}
-
-/* ::-webkit-scrollbar-thumb:hover {
-  border: 0;
 } */
 
 body {
