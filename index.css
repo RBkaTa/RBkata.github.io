@@ -13,12 +13,15 @@ body {
 
 body {
   width: 100%;
-  /* background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%); */
 }
 
 #slide_2 {
   text-align: center;
   margin: 70px;
+}
+
+#slide_2 img {
+  margin-left: 10px;
 }
 
 #logo {
@@ -27,8 +30,11 @@ body {
   position: fixed;
   top: 3%;
   z-index: 22222;
-  /* margin: 25px; */
-  /* backdrop-filter: blur(4px); */
+}
+
+.info {
+  position: absolute;
+  z-index: 2;
 }
 
 .info:hover {
@@ -40,9 +46,7 @@ body {
   text-align: center;
   position: fixed;
   bottom: 1%;
-  /* top: 865px; */
-  /* left: 50%; */
-  /* backdrop-filter: blur(4px); */
+  z-index: 2;
 }
 
 #arrow img:hover {

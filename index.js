@@ -1,4 +1,16 @@
-window.onscroll = function () { on_scroll() };
+(function () {
+    //set scroll event
+    window.onscroll = function () { on_scroll() };
+
+    //set click listeners
+    document.querySelectorAll(".info").forEach((v, k, p) => {
+        v.addEventListener("click", fast_scroll_btn_click);
+    });
+
+    document.querySelector("#arrow img").addEventListener("click", fast_scroll_btn_click);
+}())
+
+
 var isOnTop = true;
 
 function on_scroll() {
@@ -12,7 +24,7 @@ function on_scroll() {
 
 function fast_scroll_btn_click() {
     if (isOnTop) {
-        document.querySelector("#slide_2_img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
+        document.querySelector("#slide_2 img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
 
         set_position_bot();
     } else {
