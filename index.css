@@ -11,8 +11,35 @@ body {
   box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar:hover {
+  width: 2em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.25em solid transparent;
+  border-radius: 100vw;
+  /* background-color: #71bf44; */
+  background-color: #8070d4;
+  background-clip: content-box;
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+  border: 0;
+} */
+
 body {
   width: 100%;
+  overflow: overlay;
 }
 
 #slide_2 {

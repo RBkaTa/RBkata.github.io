@@ -1,9 +1,9 @@
 (function () {
     //set scroll event
-    window.onscroll = function () { on_scroll() };
+    window.onscroll = function () { on_scroll(); };
 
     //set click listeners
-    document.querySelectorAll(".info").forEach((v, k, p) => {
+    document.querySelectorAll(".info").forEach((v) => {
         v.addEventListener("click", fast_scroll_btn_click);
     });
 
@@ -25,14 +25,9 @@ function on_scroll() {
 function fast_scroll_btn_click() {
     if (isOnTop) {
         document.querySelector("#slide_2 img").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
-
-        set_position_bot();
     } else {
         document.querySelector("#slide_1").scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
-
-        set_position_top();
     }
-
 }
 
 function set_position_top() {
