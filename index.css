@@ -45,7 +45,7 @@ body {
   /* backdrop-filter: blur(4px); */
 }
 
-#arrow:hover {
+#arrow img:hover {
   cursor: pointer;
 }
 
