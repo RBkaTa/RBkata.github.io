@@ -2,7 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   box-sizing: border-box;
 }
 *,
@@ -58,9 +58,9 @@ body {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 6%;
+  top: 8%;
   color: white;
-  font-size: 4vw;
+  font-size: 2.5vw;
   z-index: 22222;
 }
 
