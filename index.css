@@ -54,6 +54,16 @@ body {
   z-index: 22222;
 }
 
+#slogan {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 6%;
+  color: white;
+  font-size: 4vw;
+  z-index: 22222;
+}
+
 .info {
   position: absolute;
   z-index: 2;
